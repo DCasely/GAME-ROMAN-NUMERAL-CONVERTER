@@ -1,3 +1,23 @@
+const form = document.querySelector('form');
+const input = document.querySelector('#submitted-number');
+const result = document.querySelector('#result');
+
+form.addEventListener('submit', (e) => {
+  // GET INPUT
+  let number = input.value;
+
+  // CONVERT INPUT
+  let romanNumeral = convertToRoman(number);
+
+  // DISPLAY INPUT
+  result.innerHTML = `Result: ${romanNumeral}`;
+
+  e.preventDefault();
+});
+
+// =======================================
+// ROMAN NUMERAL CONVERTER FUNCTION
+// =======================================
 function convertToRoman(num) {
   // TEST IF NUMBER
   if (isNaN(num)) {
@@ -32,4 +52,4 @@ function convertToRoman(num) {
   return romanStr;
 }
 
-console.log(convertToRoman(36));
+// console.log(convertToRoman(36));
